@@ -103,9 +103,7 @@ Al ingresar en la ruta http://172.17.0.2/matrix.php vemos que tiene deshabilitad
 
 Pero como sabemos que la ruta principal no tiene bloqueada la consola la abrimos desde http://172.17.0.2 e ingresamos a la ruta http://172.17.0.2/matrix.php y 👁️👁️👁️ nos encontramos con esto, un canvas que ejecuta el video estilo matrix inspeccionamos el script y vemos este codigo
 
-![image](https://github.com/user-attachments/assets/e28e6c88-ee9c-4c77-a2a6-1ebd7406daa9)
-
-
+![screen](https://github.com/user-attachments/assets/f7d5a056-ba90-41cd-9ebb-7e9792ee6664)
 
 
 
