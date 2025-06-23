@@ -37,8 +37,6 @@ Con esto verificamos que la maquina responde perfectamente, ahora vamos empezar 
 
 🔍 Parámetros explicados:
 
-Opción	      Significado
-
 **`-p-`**	    Escanea todos los puertos (1-65535), no solo los más comunes.
 
 **`-sC`**	    Usa los scripts por defecto de Nmap (default scripts) para detección.
