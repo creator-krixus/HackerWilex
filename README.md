@@ -69,7 +69,7 @@ Y bingo 🎉🎉🎉 encontramos algunas rutas ocultas dentro de esta web
 
 Explicación por partes:
 
-ffuf	Es la herramienta de fuzzing rápida para URL y archivos (como dirb o gobuster, pero más moderna y rápida).
+**`ffuf`**	Es una herramienta de fuzzing rápida para URL y archivos (como dirb o gobuster, pero más moderna y rápida).
 
 **`-u`** http://172.17.0.2/FUZZ	Define la URL de ataque. FUZZ es el marcador que ffuf reemplazará con cada palabra del diccionario.
 
