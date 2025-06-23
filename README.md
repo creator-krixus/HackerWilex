@@ -105,6 +105,13 @@ Pero como sabemos que la ruta principal no tiene bloqueada la consola la abrimos
 
 ![screen](https://github.com/user-attachments/assets/f7d5a056-ba90-41cd-9ebb-7e9792ee6664)
 
+Dado el valor de la variable y el empeño en proteger su visibilidad nos imaginamos que puede ser un dominio de este sitio web como estamos en un entorno de docker le agregamos la extension **`.dl`** para ver que podriamos ver en esa URL ejecutamos lo siguiente en la terminal
+
+```bash
+nano /etc/hosts
+```
+
+
 
 
 
