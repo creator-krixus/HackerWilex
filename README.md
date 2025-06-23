@@ -135,6 +135,13 @@ Entornos de desarrollo ============== Apuntar nombres ficticios a IPs de contene
 
 ![image](https://github.com/user-attachments/assets/10ffc1ad-3b56-487c-8660-b2034add0bb4)
 
+Ahora revisamos nuestra nueva URL
+
+![image](https://github.com/user-attachments/assets/5168812c-9230-4e5f-8dde-26a4a1e2118b)
+
+
+
+
 
 
 
