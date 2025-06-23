@@ -14,3 +14,7 @@ unzip secureLAB.zip
 ```bash
 sudo bash auto_deploy.sh securelab.tar
 ```
+
+## Info
+![image](https://github.com/user-attachments/assets/fcf6915c-012f-4609-b348-060d058b5cc7)
+
