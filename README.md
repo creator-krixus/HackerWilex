@@ -226,6 +226,30 @@ curl -X POST http://secure-api-register.dl/login \
 | `-d '{"username": "admin", "password": "love"}'` | Cuerpo JSON con las credenciales que estás probando.                         |
 | `-c cookie.txt`                                  | Guarda cualquier cookie que el servidor devuelva en el archivo `cookie.txt`. |
 
+## Leer el archivo cookie.txt
+
+```bash
+cat cookie.txt
+```
+![image](https://github.com/user-attachments/assets/7bb4b982-66fc-4850-be41-7d2200be5495)
+
+Ahora que tenemos un endpoint para atacar podemos regresar a la pagina principal **`http://172.17.0.2`** y revisar el archivo robots.txt que encontramos en el analisis que realizamos con **`ffuf`**
+
+![image](https://github.com/user-attachments/assets/25a03c54-82d9-4890-a00e-1040f2951887)
+
+Revisamos cada una de las rutas que nos muestra este archivo
+
+![image](https://github.com/user-attachments/assets/9bf4751f-dabe-4c79-9fc1-e861b9466620)
+![image](https://github.com/user-attachments/assets/01445c22-d21b-4895-8cdc-cabe9311cf1f)
+![image](https://github.com/user-attachments/assets/695c0b7e-0a91-4ed2-bb59-94e82415b45f)
+
+
+
+
+
+
+
+
 
 
 
