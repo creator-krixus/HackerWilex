@@ -24,5 +24,9 @@ Hacemos un ping para verificar la conexion con la maquina objetivo.
 
 ![image](https://github.com/user-attachments/assets/a7c4c2ec-0308-479f-9334-1acdee3c0e00)
 
-Con esto verificamos que la maquina responde a perfectamente, ahora vamos empezar con el hackeo 👏👏👏
+Con esto verificamos que la maquina responde perfectamente, ahora vamos empezar con el hackeo 👏👏👏
+
+## Realizamos un escaneo de puertos
+![image](https://github.com/user-attachments/assets/3a7de0a7-279e-4523-9eda-5db8e3ecbd2a)
+
 
