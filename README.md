@@ -108,8 +108,17 @@ Pero como sabemos que la ruta principal no tiene bloqueada la consola la abrimos
 Dado el valor de la variable y el empeño en proteger su visibilidad nos imaginamos que puede ser un dominio de este sitio web como estamos en un entorno de docker le agregamos la extension **`.dl`** para ver que podriamos ver en esa URL ejecutamos lo siguiente en la terminal
 
 ```bash
-nano /etc/hosts
+sudo nano /etc/hosts
 ```
+Agregamos esto en este archivo que abrimos con nano
+```bash
+172.17.0.2               secure-api-register.dl
+```
+Y guardamos con **`Ctrl + O`** **`Enter`** y luego **`Ctrl + X`**
+![image](https://github.com/user-attachments/assets/10ffc1ad-3b56-487c-8660-b2034add0bb4)
+
+
+
 
 
 
