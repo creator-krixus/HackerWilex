@@ -40,8 +40,17 @@ Con esto verificamos que la maquina responde perfectamente, ahora vamos empezar 
 Opción	Significado
 
 -p-	Escanea todos los puertos (1-65535), no solo los más comunes.
+
 -sC	Usa los scripts por defecto de Nmap (default scripts) para detección.
+
 -sV	Intenta detectar la versión del servicio que corre en cada puerto.
+
 -n	No resuelve DNS, es más rápido. No intenta convertir IPs en nombres.
+
 172.17.0.2	Es la IP objetivo del escaneo (puede ser una máquina local o de red).
+
+Vemos que hay un puerto 80 abierto, si entramos a el, veremos una pagina normal aparentemente.
+
+![image](https://github.com/user-attachments/assets/002e411f-627f-4a87-99bd-462f6163ebb3)
+
 
