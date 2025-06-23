@@ -201,9 +201,35 @@ Yo usare la lista de rockyou.txt pero puedes usar la que desees
 ```
 ![image](https://github.com/user-attachments/assets/fb7d6f56-47a8-4ccd-9282-f64bc7d7b66f)
 
-🎉🎉🎉🎉🎉🎉 Encontramos la contraseña **`love`** para el username **`admin`** en la web ingresamos y vemos que nos lleva a un panel de administracion, revisamos posibles peticiones a otros endpoints pero no vemos nada que nos llame la atencion
+🎉🎉🎉🎉🎉🎉 Encontramos la contraseña **`love`** para el username **`admin`** en la web ingresamos estos datos y vemos que nos lleva a un panel de administracion
 
 ![image](https://github.com/user-attachments/assets/0956785c-fcd1-4b01-b8bf-c6f0ea86dc39)
+
+Seguimos con nuestra inspeccion mediante la consola y encontramos lo siguente en el storage de la aplicacion web
+
+![image](https://github.com/user-attachments/assets/7894dcab-47d1-4457-b3bc-b1fb0fdf3c96)
+
+Ahora tenemos un posible token para interacturar con la API de este sitio web, ahora que tenemos una cookie vamos a guardarla en un archivo para poder usarla en una peticion con Curl
+
+```bash
+curl -X POST http://secure-api-register.dl/login \
+  -H "Content-Type: application/json" \
+  -d '{"username": "admin", "password": "love"}' \
+  -c cookie.txt
+```
+
+🔍 ¿Qué hace este comando?
+
+| Parte                                            | Explicación                                                                  |
+| ------------------------------------------------ | ---------------------------------------------------------------------------- |
+| `curl -X POST`                                   | Indica que se hará una petición HTTP `POST`.                                 |
+| `http://secure-api-register.dl/login`            | URL del endpoint donde se envía el login.                                    |
+| `-H "Content-Type: application/json"`            | Especifica que el cuerpo de la petición está en formato JSON.                |
+| `-d '{"username": "admin", "password": "love"}'` | Cuerpo JSON con las credenciales que estás probando.                         |
+| `-c cookie.txt`                                  | Guarda cualquier cookie que el servidor devuelva en el archivo `cookie.txt`. |
+
+
+
 
 
 
