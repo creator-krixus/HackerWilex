@@ -24,6 +24,12 @@ Hacemos un ping para verificar la conexion con la maquina objetivo.
 
 ![image](https://github.com/user-attachments/assets/a7c4c2ec-0308-479f-9334-1acdee3c0e00)
 
+Con esto enviamos tramas ICMP “Internet Control Message Protocol” tipo (Echo Request) a la ip victima, esta misma, al estar en funcionamiento, revisa las cabeceras del paquete para verificar que es para ella, y responde con un (Echo Reply).)
+
+1. Podemos ver el orden de estas tramas ICMP en el apartado “icmp_seq=”,
+2. Con el valor de “ttl=” podemos ver el número máximo de saltos que puede dar un paquete antes de descartarse (Por lo general funciona para determinar el sistema operativo víctima)
+3. Con el valor “time=” podemos ver el tiempo entre el “Echo Request” y el “Echo Reply”)
+
 Con esto verificamos que la maquina responde perfectamente, ahora vamos empezar con el hackeo 👏👏👏
 
 ## Realizamos un escaneo de puertos
