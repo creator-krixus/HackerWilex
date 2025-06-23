@@ -97,6 +97,17 @@ http://172.17.0.2/index.html
 
 Para cada palabra en common.txt, ffuf prueba combinaciones con esas extensiones, y solo muestra respuestas diferentes a 275 bytes, lo que ayuda a filtrar basura y falsos positivos.
 
+Al ingresar en la ruta http://172.17.0.2/matrix.php vemos que tiene deshabilitada la inspeccion por consola
+
+![image](https://github.com/user-attachments/assets/3c13386b-4ec1-4736-acbd-907d3fa1213a)
+
+Pero como sabemos que la ruta principal no tiene bloqueada la consola la abrimos desde http://172.17.0.2 e ingresamos a la ruta http://172.17.0.2/matrix.php y 👁️👁️👁️ nos encontramos con esto, un canvas que ejecuta el video estilo matrix inspeccionamos el script y vemos este codigo
+
+![image](https://github.com/user-attachments/assets/e28e6c88-ee9c-4c77-a2a6-1ebd7406daa9)
+
+
+
+
 
 
 
