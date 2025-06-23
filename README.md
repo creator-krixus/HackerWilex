@@ -49,7 +49,7 @@ Con esto verificamos que la maquina responde perfectamente, ahora vamos empezar 
 
 ## Analisis
 
-Vemos que hay un puerto 80 abierto, si entramos a el, veremos una pagina normal aparentemente.
+Vemos que hay un puerto 80 abierto, si ponemos la ip **`172.17.0.2`* en un navegador web, veremos una pagina normal aparentemente.
 
 ![image](https://github.com/user-attachments/assets/002e411f-627f-4a87-99bd-462f6163ebb3)
 
