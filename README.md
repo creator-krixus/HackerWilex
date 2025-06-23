@@ -57,6 +57,18 @@ Abrimos la consola y a simple vista no encontramos nada interesante ni en el htm
 
 ![image](https://github.com/user-attachments/assets/35958cf3-7ede-4d12-9736-6e296276a53d)
 
+Como no encontramos nada a simple vista, vamos a intentar encontrar posibles rutas ocultas
+
+Usamos ffuf (Fast web Fuzzer) se usa para descubrir directorios y archivos ocultos en un servidor web, algo común en pruebas de penetración.
+```bash
+ffuf -u http://172.17.0.2/FUZZ -w /usr/share/wordlists/dirb/common.txt -H "User-Agent: Mozilla/5.0" -fs 275 -e .php,.html,.bak,.txt -c
+```
+Y bingo 🎉🎉🎉 encontramos algunas rutas ocultas dentro de esta web
+
+![image](https://github.com/user-attachments/assets/8c4ec611-d885-4cd0-81f0-2e8cee193350)
+
+
+
 
 
 
