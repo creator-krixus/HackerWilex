@@ -201,9 +201,13 @@ Yo usare la lista de rockyou.txt pero puedes usar la que desees
 ```
 ![image](https://github.com/user-attachments/assets/fb7d6f56-47a8-4ccd-9282-f64bc7d7b66f)
 
-🎉🎉🎉🎉🎉🎉 Encontramos la contraseña **`love`** para el username **`admin`** en la web ingresamos y vemos que no lleva a panel de administracion
+🎉🎉🎉🎉🎉🎉 Encontramos la contraseña **`love`** para el username **`admin`** en la web ingresamos y vemos que nos lleva a un panel de administracion, revisamos posibles peticiones a otros endpoints pero no vemos nada que nos llame la atencion
 
 ![image](https://github.com/user-attachments/assets/0956785c-fcd1-4b01-b8bf-c6f0ea86dc39)
+
+
+
+
 
 
 
