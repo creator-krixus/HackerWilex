@@ -5,7 +5,6 @@ Maquina dificil de la plataforma Dockerlabs usada para evaluacion final de Diplo
 ## Instalacion
 Despues de obtener el archivo .zip lo pasamos a nuetro entorno de trabajo, en mi caso voy a usar Kali linux.
 
-Ejecuta el siguiente comando
 ## Comando para descomprimir el archivo
 ```bash
 unzip secureLAB.zip
