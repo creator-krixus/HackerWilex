@@ -243,6 +243,32 @@ Revisamos cada una de las rutas que nos muestra este archivo
 ![image](https://github.com/user-attachments/assets/01445c22-d21b-4895-8cdc-cabe9311cf1f)
 ![image](https://github.com/user-attachments/assets/695c0b7e-0a91-4ed2-bb59-94e82415b45f)
 
+Como no tenemos acceso a nada a simple vista vamos a intentar ataques de fuerza bruta sobre cada uno de esos ficheros que encontramos en el **`robots.txt`**
+para esto vamos a usar Curl nuevamente
+
+```bash
+curl -X POST http://secure-api-register.dl/execute \
+  -H "Content-Type: application/json" \
+  -d '{"<FUZZ>": "whoami"}' \
+  -b cookie.txt
+```
+
+🔍 Que hace esto:
+
+| Parte                                   | Explicación                                                                                                                              |
+| --------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `curl -X POST`                          | Se realiza una **petición HTTP POST**.                                                                                                   |
+| `http://secure-api-register.dl/execute` | Es el **endpoint** al que se envía la petición. Puede ser una API que ejecuta comandos.                                                  |
+| `-H "Content-Type: application/json"`   | Indica que el cuerpo es **JSON**.                                                                                                        |
+| `-d '{"<FUZZ>": "whoami"}'`             | Se envía un JSON, pero el nombre del parámetro (la clave) es desconocido, por eso se usa `<FUZZ>` como marcador.                         |
+| `"whoami"`                              | Es el valor que se está enviando. En este caso, **el comando a ejecutar** (Linux).                                                       |
+| `-b cookie.txt`                         | Usa la **cookie de sesión** previamente guardada (por ejemplo, con el login). Esto puede ser necesario si la API requiere autenticación. |
+
+Al ejecutar el comando obtenemos esta respuesta:
+
+![image](https://github.com/user-attachments/assets/55fe3c1d-a02d-401c-9b5d-353f0d351505)
+
+
 
 
 
