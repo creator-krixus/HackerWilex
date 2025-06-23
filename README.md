@@ -59,7 +59,7 @@ Abrimos la consola y a simple vista no encontramos nada interesante ni en el htm
 
 Como no encontramos nada a simple vista, vamos a intentar encontrar posibles rutas ocultas
 
-Usamos ffuf (Fast web Fuzzer) se usa para descubrir directorios y archivos ocultos en un servidor web, algo común en pruebas de penetración.
+Usamos **`ffuf`** (Fast web Fuzzer) se usa para descubrir directorios y archivos ocultos en un servidor web, algo común en pruebas de penetración.
 ```bash
 ffuf -u http://172.17.0.2/FUZZ -w /usr/share/wordlists/dirb/common.txt -H "User-Agent: Mozilla/5.0" -fs 275 -e .php,.html,.bak,.txt -c
 ```
