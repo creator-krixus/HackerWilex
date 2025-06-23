@@ -83,6 +83,21 @@ ffuf	Es la herramienta de fuzzing rápida para URL y archivos (como dirb o gobus
 
 **`-c`**	Activa la salida con colores (para facilitar lectura en consola).
 
+## ¿Qué está haciendo?
+
+Está buscando rutas como estas:
+
+http://172.17.0.2/admin
+
+http://172.17.0.2/admin.php
+
+http://172.17.0.2/config.bak
+
+http://172.17.0.2/index.html
+
+Para cada palabra en common.txt, ffuf prueba combinaciones con esas extensiones, y solo muestra respuestas diferentes a 275 bytes, lo que ayuda a filtrar basura y falsos positivos.
+
+
 
 
 
