@@ -37,15 +37,15 @@ Con esto verificamos que la maquina responde perfectamente, ahora vamos empezar 
 
 🔍 Parámetros explicados:
 
-Opción	Significado
+Opción	      Significado
 
-**`-p-`**	Escanea todos los puertos (1-65535), no solo los más comunes.
+**`-p-`**	    Escanea todos los puertos (1-65535), no solo los más comunes.
 
-**`-sC`**	Usa los scripts por defecto de Nmap (default scripts) para detección.
+**`-sC`**	    Usa los scripts por defecto de Nmap (default scripts) para detección.
 
-**`-sV`**	Intenta detectar la versión del servicio que corre en cada puerto.
+**`-sV`**	    Intenta detectar la versión del servicio que corre en cada puerto.
 
-**`-n`**	No resuelve DNS, es más rápido. No intenta convertir IPs en nombres.
+**`-n`**	    No resuelve DNS, es más rápido. No intenta convertir IPs en nombres.
 
 **`172.17.0.2`**	Es la IP objetivo del escaneo (puede ser una máquina local o de red).
 
