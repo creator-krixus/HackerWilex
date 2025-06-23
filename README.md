@@ -67,6 +67,15 @@ Y bingo 🎉🎉🎉 encontramos algunas rutas ocultas dentro de esta web
 
 ![image](https://github.com/user-attachments/assets/8c4ec611-d885-4cd0-81f0-2e8cee193350)
 
+Explicación por partes:
+
+ffuf	Es la herramienta de fuzzing rápida para URL y archivos (como dirb o gobuster, pero más moderna y rápida).
+**`-u`** http://172.17.0.2/FUZZ	Define la URL de ataque. FUZZ es el marcador que ffuf reemplazará con cada palabra del diccionario.
+**`-w`** /usr/share/wordlists/dirb/common.txt	Ruta al diccionario con nombres comunes de directorios/archivos a probar.
+**`-H`** "User-Agent: Mozilla/5.0"	Añade una cabecera HTTP personalizada, en este caso simula un navegador real.
+**`-fs`** 275	Filtra respuestas que tengan un tamaño fijo de 275 bytes (posiblemente respuestas 404 personalizadas u otras inútiles).
+**`-e`** .php,.html,.bak,.txt	Añade extensiones a probar, como admin.php, admin.bak, etc.
+**`-c`**	Activa la salida con colores (para facilitar lectura en consola).
 
 
 
