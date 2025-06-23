@@ -115,7 +115,22 @@ Agregamos esto en este archivo que abrimos con nano
 172.17.0.2               secure-api-register.dl
 ```
 Y guardamos con **`Ctrl + O`** **`Enter`** y luego **`Ctrl + X`**
+
+🧾 ¿Qué es /etc/hosts?
+Es un archivo del sistema en Linux (y también en macOS y WSL) que asocia nombres de dominio con direcciones IP de forma local, antes de consultar un servidor DNS.
+
+Es como una "mini agenda de DNS personalizada".
+
+📌 ¿Para qué se usa?
+Algunas aplicaciones comunes:
+Redirigir dominios	Hacer que test.local apunte a 127.0.0.1.
+Simular dominios en local	Apuntar misitio.com a tu IP de pruebas.
+Bloquear sitios	Apuntar facebook.com a 127.0.0.1 para bloquearlo.
+Entornos de desarrollo	Apuntar nombres ficticios a IPs de contenedores Docker o VMs.
+
 ![image](https://github.com/user-attachments/assets/10ffc1ad-3b56-487c-8660-b2034add0bb4)
+
+
 
 
 
