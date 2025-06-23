@@ -55,4 +55,10 @@ Vemos que hay un puerto 80 abierto, si entramos a el, veremos una pagina normal 
 
 ![image](https://github.com/user-attachments/assets/002e411f-627f-4a87-99bd-462f6163ebb3)
 
+Abrimos la consola y a simple vista no encontramos nada interesante ni en el html ni en el script.js
+
+![image](https://github.com/user-attachments/assets/35958cf3-7ede-4d12-9736-6e296276a53d)
+
+
+
 
