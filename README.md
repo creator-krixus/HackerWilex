@@ -1,3 +1,6 @@
 Maquina dificil de la plataforma Dockerlabs:
 
-![image](https://github.com/user-attachments/assets/b9978993-2c53-42c9-8a20-f7aeb0b96ce2)
+![image](https://github.com/user-attachments/assets/effa1ad5-583f-4910-a1f3-77948093d0d1)
+
+Instalacion
+
