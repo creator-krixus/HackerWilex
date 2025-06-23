@@ -9,4 +9,7 @@ Despues de obtener el archivo **`.zip`** lo pasamos a nuestro entorno de trabajo
 ```bash
 unzip secureLAB.zip
 
+## Comando para iniciar la maquina
+```bash
+sudo bash auto_deploy.sh securelab.tar
 
