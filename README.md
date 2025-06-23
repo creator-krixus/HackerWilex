@@ -110,7 +110,7 @@ Dado el valor de la variable y el empeño en proteger su visibilidad nos imagina
 ```bash
 sudo nano /etc/hosts
 ```
-Agregamos esto en este archivo que abrimos con nano
+Agregamos esto en el archivo que abrimos con nano
 ```bash
 172.17.0.2               secure-api-register.dl
 ```
@@ -199,6 +199,13 @@ Yo usare la lista de rockyou.txt pero puedes usar la que desees
 ```bash
 ./bruteforce.sh /usr/share/wordlists/rockyou.txt
 ```
+![image](https://github.com/user-attachments/assets/fb7d6f56-47a8-4ccd-9282-f64bc7d7b66f)
+
+🎉🎉🎉🎉🎉🎉 Encontramos la contraseña **`love`** para el username **`admin`** en la web ingresamos y vemos que no lleva a panel de administracion
+
+![image](https://github.com/user-attachments/assets/0956785c-fcd1-4b01-b8bf-c6f0ea86dc39)
+
+
 
 
 
