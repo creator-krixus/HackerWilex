@@ -101,7 +101,7 @@ Al ingresar en la ruta http://172.17.0.2/matrix.php vemos que tiene deshabilitad
 
 ![image](https://github.com/user-attachments/assets/3c13386b-4ec1-4736-acbd-907d3fa1213a)
 
-Pero como sabemos que la ruta principal no tiene bloqueada la consola la abrimos desde http://172.17.0.2 e ingresamos a la ruta http://172.17.0.2/matrix.php y 👁️👁️👁️ nos encontramos con esto, un canvas que ejecuta el video estilo matrix inspeccionamos el script y vemos este codigo que contiene una varible que dice **`specialWord`** y tiene como valor r**`secure-api-register`**
+Pero como sabemos que la ruta principal no tiene bloqueada la consola la abrimos desde http://172.17.0.2 e ingresamos a la ruta http://172.17.0.2/matrix.php y 👁️👁️👁️ nos encontramos con esto, un canvas que ejecuta el video estilo matrix inspeccionamos el script y vemos este codigo que contiene una varible que dice **`specialWord`** y tiene como valor **`secure-api-register`**
 
 ![screen](https://github.com/user-attachments/assets/f7d5a056-ba90-41cd-9ebb-7e9792ee6664)
 
