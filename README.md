@@ -171,7 +171,7 @@ fi
 # Itera sobre cada línea del archivo de contraseñas
 while IFS= read -r PASSWORD; do
     PASSWORD=$(echo "$PASSWORD" | tr -d '\r')  # Elimina caracteres raros (como \r en wordlists de Windows)
-    echo "[*] Probando: $PASSWORD"
+    echo "[*] Analizando: $PASSWORD"
 
     RESPONSE=$(curl -s -X POST "$URL" \
         -H "Content-Type: application/json" \
