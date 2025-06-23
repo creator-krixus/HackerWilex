@@ -117,6 +117,7 @@ Agregamos esto en este archivo que abrimos con nano
 Y guardamos con **`Ctrl + O`** **`Enter`** y luego **`Ctrl + X`**
 
 🧾 ¿Qué es /etc/hosts?
+
 Es un archivo del sistema en Linux (y también en macOS y WSL) que asocia nombres de dominio con direcciones IP de forma local, antes de consultar un servidor DNS.
 
 Es como una "mini agenda de DNS personalizada".
