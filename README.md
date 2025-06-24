@@ -367,7 +367,14 @@ Si todo salio bien deberias estar viendo algo asi
 
 ![image](https://github.com/user-attachments/assets/4d922556-e820-4e0b-bc90-90bc8fd7c0eb)
 
+Ya tienes acceso a la maquina desde ahora puedes empezar a revisar los ficheros que contiene el servidor
 
+Revisemos esta ruta
+
+```bash
+cd /var/www
+ls -la
+```
 
 
 
