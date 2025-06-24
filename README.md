@@ -377,6 +377,26 @@ ls -la
 ```
 ![image](https://github.com/user-attachments/assets/bab7c0e3-d489-4209-831f-108ab045551d)
 
+Empezamos a revisar las carpeta analisys 
+
+```bash
+cd analisys
+```
+
+```bash
+ls
+```
+
+![image](https://github.com/user-attachments/assets/c29422c7-bf9e-4f57-94dd-bf4bc6060844)
+
+Revisemos el archivo note.txt
+
+```bash
+cat note.txt
+```
+
+![image](https://github.com/user-attachments/assets/230be7aa-bbc4-4bda-b0ab-d1561132660d)
+
 
 
 
