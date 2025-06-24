@@ -527,7 +527,7 @@ A continuacion debemos formar nuestro **`hash`** el cual quedaria asi:
 
 **`$krb5pa$18$empleado1$CORP.LOCAL$CORP.LOCALempleado1$cdd51e61aafb2b409e65ade3c748a18a85b02f3c6ebfbba42004e9669279104aef7d20d49ac73046cf1093063c3e74b2c5558d33e5521d3c`**
 
-A continuacion debemos **`crakear`** el **`crakear`**
+A continuacion debemos **`crakear`** el **`hash`**
 
 
 
