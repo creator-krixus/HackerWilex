@@ -375,6 +375,9 @@ Revisemos esta ruta
 cd /var/www
 ls -la
 ```
+![image](https://github.com/user-attachments/assets/bab7c0e3-d489-4209-831f-108ab045551d)
+
+
 
 
 
