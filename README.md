@@ -413,11 +413,86 @@ Ahora ejecutamos esto en nuestra maquina
 curl -O http://172.17.0.2:8080/traficDetect.pcap
 ```
 Así te lo descargas fácilmente.
+
 ![image](https://github.com/user-attachments/assets/bd80b093-4093-449b-9a3f-4ed6f5489f54)
 
 Abrimos el archivo traficDetect.pcap con wireshark
 ![image](https://github.com/user-attachments/assets/5c1c2196-8d02-4180-b3fa-c86b0ace9aab)
 ![image](https://github.com/user-attachments/assets/086d7d1e-f539-491f-a9ae-81976aefc6e1)
+
+En Wireshark, puedes encontrar autenticaciones observando ciertos protocolos y tipos de paquetes. No se notifican como "autenticación" explícita, pero puedes detectarlas interpretando los protocolos que la contienen.
+
+🔐 Protocolos comunes donde puedes encontrar autenticaciones:
+
+| Protocolo       | Tipo de autenticación                               | Cómo identificarlo en Wireshark                                |
+| --------------- | --------------------------------------------------- | -------------------------------------------------------------- |
+| **HTTP**        | Formularios (`POST login`) o `Authorization: Basic` | Filtro: `http.request.method == "POST"` o `http.authorization` |
+| **FTP**         | Usuario y contraseña en texto claro                 | Filtro: `ftp.request.command == "USER"` o `"PASS"`             |
+| **Telnet**      | Transmisión en texto plano                          | Filtro: `telnet` + examinar el contenido manualmente           |
+| **SMB / NTLM**  | Autenticación NTLM (Windows)                        | Filtro: `ntlmssp` o `smb2.cmd == 0x03`                         |
+| **LDAP**        | Bind requests                                       | Filtro: `ldap` + buscar `bindRequest`                          |
+| **IMAP / POP3** | Usuario y contraseña en texto claro o LOGIN command | Filtro: `imap` o `pop`                                         |
+| **SSH**         | Autenticación cifrada, pero se puede ver handshake  | Filtro: `ssh`                                                  |
+| **Kerberos**    | Tickets de autenticación (en entornos Windows)      | Filtro: `kerberos`                                             |
+| **RDP**         | Logins remotos, posibles intentos con `credSSP`     | Filtro: `tls.handshake.type == 1` (con IP y contexto)          |
+
+Usamos el filtro **`tcp.stream eq 1`** en Wireshark se usa para ver todo el tráfico TCP correspondiente a una única conexión específica.
+
+## ¿Qué hace tcp.stream eq 1?
+Filtra y muestra solo los paquetes TCP que pertenecen al stream número 1. Es útil para:
+
+Aislar una sola conexión (por ejemplo: una sesión FTP, HTTP o Telnet).
+
+Analizar una conversación completa sin ruido de otras conexiones.
+
+Extraer credenciales, comandos, archivos, etc.
+
+## ¿Para qué sirve esto en ciberseguridad?
+Ver tráfico de inicios de sesión (por ejemplo: HTTP POST con usuario/contraseña).
+
+Ver comandos enviados por Telnet/FTP.
+
+Revisar exfiltración de datos.
+
+Identificar shells reversas o payloads enviados.
+
+![image](https://github.com/user-attachments/assets/98d84dd5-483e-4792-8fc7-60b9bc0ba3be)
+
+Ya sabemos que si existe una unica conexion especifica ahora podemos afinar mas los filtros para encontrar la traza de esa conexion
+
+Para filtrar AS-REQ (Authentication Service Request) de Kerberos en Wireshark, puedes usar el siguiente filtro: **`kerberos.msg_type == 10
+`**
+![image](https://github.com/user-attachments/assets/74045a52-d418-4280-a4e9-e8304eeaccfc)
+
+![image](https://github.com/user-attachments/assets/27ec128f-2782-4c5a-a995-bcfdd3ae3787)
+
+## ¿Qué es un AS-REQ?
+Es el primer mensaje en la autenticación Kerberos.
+
+Un cliente lo envía al KDC (Key Distribution Center) para solicitar un Ticket Granting Ticket (TGT).
+
+Si ves un AS-REQ, estás observando un intento de autenticación al dominio.
+
+##  Otros filtros útiles de Kerberos:
+
+| Tipo de mensaje | Descripción                     | Filtro Wireshark          |
+| --------------- | ------------------------------- | ------------------------- |
+| **AS-REQ**      | Petición de autenticación       | `kerberos.msg_type == 10` |
+| **AS-REP**      | Respuesta del KDC con TGT       | `kerberos.msg_type == 11` |
+| **TGS-REQ**     | Solicita acceso a un servicio   | `kerberos.msg_type == 12` |
+| **TGS-REP**     | Ticket para el servicio         | `kerberos.msg_type == 13` |
+| **AP-REQ**      | Cliente usa ticket con servidor | `kerberos.msg_type == 14` |
+
+## ¿Cómo identificar usuarios?
+Cuando haces kerberos.msg_type == 10, puedes mirar:
+
+El campo cname (nombre del cliente/usuario).
+
+El campo realm (nombre del dominio).
+
+Si es un intento fallido o válido.
+
+
 
 
 
