@@ -331,7 +331,38 @@ curl -X POST http://secure-api-register.dl/execute \
 
 ![image](https://github.com/user-attachments/assets/26d7465e-27f1-402c-9aae-16c1ce0da453)
 
-Ya tenemos una shell dentro de la app 🎉🎉🎉🎉🎉
+Ya tenemos una shell dentro de la app con el usuario **`www-data`** 🎉🎉🎉🎉🎉
+
+Ahora vamos a sanitizar lo hacemos de la siguiente manera
+
+```bash
+script /dev/null -c bash
+```
+![image](https://github.com/user-attachments/assets/56ae9252-24ed-4f9c-8355-39c9d8519b1f)
+
+Luego, presionas Ctrl + Z en tu terminal atacante para suspender la reverse shell.
+
+En tu terminal atacante, configuras tu terminal local:
+
+```bash
+stty raw -echo; fg
+```
+Esto le dice a tu terminal que trate la conexión como una terminal real, y reactiva la reverse shell que habías suspendido.
+
+Ya restaurada la shell, sigues ejecutando lo siguiente también en la reverse shell:
+
+```bash
+reset xterm
+export TERM=xterm
+export SHELL=/bin/bash
+```
+
+Finalmente, puedes usar
+
+```bash
+stty size
+stty rows 24 columns 80
+```
 
 
 
