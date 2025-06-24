@@ -286,6 +286,12 @@ done
 
 ## 3. Le damos permisos de ejecucion
 ```bash
+chmod +x param_fuzz.sh
+```
+
+## 4. Ejecutamos
+
+```bash
 ./param_fuzz.sh
 ```
 
