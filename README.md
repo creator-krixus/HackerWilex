@@ -484,13 +484,49 @@ Si ves un AS-REQ, estás observando un intento de autenticación al dominio.
 | **AP-REQ**      | Cliente usa ticket con servidor | `kerberos.msg_type == 14` |
 
 ## ¿Cómo identificar usuarios?
-Cuando haces kerberos.msg_type == 10, puedes mirar:
+Cuando haces **`kerberos.msg_type == 10`**, puedes mirar:
 
 El campo cname (nombre del cliente/usuario).
 
 El campo realm (nombre del dominio).
 
 Si es un intento fallido o válido.
+
+El filtro **`kerberos.msg_type == 11`** en Wireshark te muestra todos los paquetes Kerberos que son de tipo AS-REP (Authentication Service Reply).
+
+## ¿Qué es un AS-REP?
+AS-REP es la respuesta del servidor KDC (Key Distribution Center) a un mensaje AS-REQ (el intento de autenticación inicial del cliente).
+
+Contiene el Ticket Granting Ticket (TGT) cifrado.
+
+Se envía solo si la autenticación fue exitosa.
+
+## ¿Qué contiene un AS-REP?
+Un TGT cifrado con la clave secreta del TGS.
+
+Un bloque de sesión cifrado con la clave derivada de la contraseña del usuario.
+
+## ¿Por qué es importante en pentesting?
+En ciertos entornos (especialmente si el usuario no requiere preautenticación), un atacante puede solicitar un AS-REP sin conocer la contraseña del usuario.
+Este ataque se conoce como:
+
+⚠️ AS-REP Roasting
+Si un usuario tiene preauth deshabilitado, se puede obtener un AS-REP directamente.
+
+El bloque cifrado del AS-REP se puede capturar y crackear offline con herramientas como Hashcat.
+
+![image](https://github.com/user-attachments/assets/0240180f-f470-4a2a-8a32-795ef57d04bf)
+
+Con todos los datos recopilados tendremos que formar nuestro hash.
+
+Para que sea uno hash de kerberos valido, tendra la siguiente estructura
+
+**`$krb5pa$18$<USER>$<DOMAIN>$<SALT>$<HASH_CIPHER>`**
+
+A continuacion debemos formar nuestro **`hash`** el cual quedaria asi:
+
+**`$krb5pa$18$empleado1$CORP.LOCAL$CORP.LOCALempleado1$cdd51e61aafb2b409e65ade3c748a18a85b02f3c6ebfbba42004e9669279104aef7d20d49ac73046cf1093063c3e74b2c5558d33e5521d3c`**
+
 
 
 
