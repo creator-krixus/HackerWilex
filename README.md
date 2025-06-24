@@ -397,6 +397,28 @@ cat note.txt
 
 ![image](https://github.com/user-attachments/assets/230be7aa-bbc4-4bda-b0ab-d1561132660d)
 
+Para transferir el archivo .pcap a nuestra maquina para analizarlo podemos usar lo siguiente
+
+Ejecutamos esto en la maquina victima
+
+```bash
+python3 -m http.server 8080
+```
+![image](https://github.com/user-attachments/assets/42fdb015-108a-41a6-8cae-c1e44207bb03)
+
+Ahora ejecutamos esto en nuestra maquina
+
+```bash
+curl -O http://172.17.0.2:8080/traficDetect.pcap
+
+```
+
+![image](https://github.com/user-attachments/assets/bd80b093-4093-449b-9a3f-4ed6f5489f54)
+
+
+
+
+
 
 
 
