@@ -340,7 +340,7 @@ script /dev/null -c bash
 ```
 ![image](https://github.com/user-attachments/assets/56ae9252-24ed-4f9c-8355-39c9d8519b1f)
 
-Luego, presionas Ctrl + Z en tu terminal atacante para suspender la reverse shell.
+Luego, presionas **`Ctrl + Z`** en tu terminal atacante para suspender la reverse shell.
 
 En tu terminal atacante, configuras tu terminal local:
 
