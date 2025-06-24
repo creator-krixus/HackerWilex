@@ -404,15 +404,15 @@ Ejecutamos esto en la maquina victima
 ```bash
 python3 -m http.server 8080
 ```
+Esto sirve los archivos del directorio actual por HTTP en el puerto 8080
 ![image](https://github.com/user-attachments/assets/42fdb015-108a-41a6-8cae-c1e44207bb03)
 
 Ahora ejecutamos esto en nuestra maquina
 
 ```bash
 curl -O http://172.17.0.2:8080/traficDetect.pcap
-
 ```
-
+Así te lo descargas fácilmente.
 ![image](https://github.com/user-attachments/assets/bd80b093-4093-449b-9a3f-4ed6f5489f54)
 
 
