@@ -363,6 +363,12 @@ Finalmente, puedes usar
 stty size
 stty rows 24 columns 80
 ```
+Si todo salio bien deberias estar viendo algo asi
+
+![image](https://github.com/user-attachments/assets/4d922556-e820-4e0b-bc90-90bc8fd7c0eb)
+
+
+
 
 
 
